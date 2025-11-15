@@ -10,24 +10,34 @@
 <body>
     <main>
         <div class = "container">
+            
             <h1>Tira un dado</h1>
-                <div class="botontirar">
-                    <select name="select">
-                        <option value="4">d4</option>
-                        <option value ="6" selected>d6</option>
-                        <option value="8">d8</option>
-                        <option value="10">d10</option>
-                        <option value="12">d12</option>
-                        <option value="20">d20</option>
-                        </select>
-                    <button id="tirar">Tira</button>
-                </div>
-                    
-                <div class="caja_resultado">
-                    <p id="resultado"></p>
-                </div>
+
+            <div class="botontirar">
+                <select name="select">
+                    <option value=4>d4</option>
+                    <option value=6 selected>d6</option>
+                    <option value=8>d8</option>
+                    <option value=10>d10</option>
+                    <option value=12>d12</option>
+                    <option value=20>d20</option>
+                    </select>
+                <button id="tirar">Tira</button>
+            </div>
+                
+            <div class="caja_resultado">
+                <p id="resultado"></p>
+            </div>
+
+            <div class="grafico">
+                <canvas id="myChart"></canvas>
+            </div>
         </div>
+   
+        
     </main>
+
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
