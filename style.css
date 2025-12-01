@@ -1,49 +1,163 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* ============================
+   🎨 VARIABLES DE COLOR
+   ============================ */
+:root {
+  --bg: #f5f5f7;
+  --text: #1a1a1a;
+  --card: #ffffff;
+  --accent: #6c4ce8;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg: #121212;
+  --text: #e8e8e8;
+  --card: #1e1e1e;
+  --accent: #a48cff;
+  --shadow: rgba(0, 0, 0, 0.55);
+}
+
+/* ============================
+   🔘 TOGGLE
+   ============================ */
+
+.theme-toggle {
+  width: 55px;
+  height: 28px;
+  background: var(--card);
+  border-radius: 30px;
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle .toggle-circle {
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.30s ease;
+}
+
+/* Cuando el body tiene dark */
+.dark .theme-toggle .toggle-circle {
+  transform: translateX(27px);
+}
+
+/* ============================
+   🎨 ESTILOS BASE
+   ============================ */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /*
-    lo mismo que flex-flow: column wrap
-    */
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap:10px;
-    background-color: palegoldenrod;
-    width: 100%;
-    height: 500px;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-h1 {
-    color: blueviolet;
+.titulo-app {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4f46e5;
 }
 
-/*
-.botontirar{
-    
+.panel-seleccion {
+  display: flex;
+  gap: 1rem;
 }
+
+select, button {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+}
+
+button {
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+.panel-resultado {
+  background: white;
+  padding: 1.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.resultado-text {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4f46e5;
+}
+
+.pop {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0.2; }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Dashboard */
+.dashboard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 1.2rem 1rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.valor {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
 .grafico {
-}
-*/
-
-.caja_resultado {
-    position: relative;
-    background-color:paleturquoise;
-    height: 100px;
-    width: 100px;
-    align-content: center;
-}
-
-#resultado{
-    text-align: center;
-    font-size: larger;
-    font-weight: 700;
+  width: 100%;
 }
